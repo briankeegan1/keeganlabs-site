@@ -1,106 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keegan Labs — Data Pipelines, AI Automation &amp; Compliance Operations</title>
-<meta name="description" content="Keegan Labs delivers data pipelines, AI automation, and compliance-operations services for small and mid-size organizations.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keegan Labs — Data Pipelines, AI Automation &amp; Technical Solutions</title>
+<meta name="description" content="Keegan Labs builds data pipelines, AI workflow automation, and technical solutions — open-source first, affordable by design, and happy to teach your team along the way.">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 17px;
-  line-height: 1.65;
-  color: #1a1a1a;
-  background: #fff;
-  padding: 2rem 1.25rem;
+/* ═══ KEEGAN LABS · deep-field theme (OS X Lion / Andromeda) ═══════════
+   cold deep-blue space · warm silver-gold galaxy · thin Helvetica
+   zero external assets — every pixel below is CSS                        */
+:root{
+  --field:#020712; --ink:#e9eef8; --dim:#9fb0cc; --faint:#5c6c8a;
+  --ice:#9cc4ff; --ice-soft:#cfe0f8; --warm:#f2c288; --warm-soft:#ffe9cf;
+  --line:rgba(159,196,255,.14); --line-warm:rgba(242,194,136,.25);
 }
-.wrap { max-width: 760px; margin: 0 auto; }
-header { border-bottom: 2px solid #1a1a1a; padding-bottom: 1.25rem; margin-bottom: 2.5rem; }
-header .wordmark { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
-nav { margin-top: 0.75rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-nav a { color: #1a1a1a; text-decoration: none; font-size: 0.95rem; }
-nav a:hover { text-decoration: underline; }
-nav a.active { font-weight: 600; text-decoration: underline; }
-h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.02em; }
-h2 { font-size: 1.15rem; font-weight: 700; margin: 2rem 0 0.5rem; }
-p { margin-bottom: 1rem; }
-.section { margin-bottom: 2.5rem; }
-.section-number { font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.08em; color: #666; margin-bottom: 0.4rem; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem; margin-top: 1rem; }
-.service-card { border: 1px solid #e0e0e0; padding: 1.1rem 1.25rem; }
-.service-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
-.service-card p { font-size: 0.9rem; margin: 0; color: #333; }
-footer { border-top: 1px solid #e0e0e0; margin-top: 3rem; padding-top: 1.25rem;
-  font-size: 0.85rem; color: #666; }
-footer a { color: #666; }
-@media (max-width: 520px) {
-  h1 { font-size: 1.55rem; }
-  .services-grid { grid-template-columns: 1fr; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  background:var(--field); color:var(--ink); overflow-x:hidden;
+  -webkit-font-smoothing:antialiased; line-height:1.66;
 }
+::selection{background:rgba(242,194,136,.35)}
+
+/* ── the deep field ─────────────────────────────────────────────────── */
+.field{position:fixed;inset:0;z-index:-3;background:
+  radial-gradient(ellipse 120% 70% at 50% -10%, #0a1626 0%, transparent 55%),
+  radial-gradient(ellipse 80% 50% at 85% 90%, #071220 0%, transparent 60%),
+  linear-gradient(180deg,#01040c 0%,#030a18 40%,#04101f 72%,#020610 100%);}
+.stars,.stars2,.stars3{position:fixed;inset:0;z-index:-2;pointer-events:none}
+.stars i,.stars2 i,.stars3 i{position:absolute;top:0;left:0;border-radius:50%}
+.stars  i{width:1px;height:1px;opacity:.9;box-shadow:2123px 1111px 0 1px #cfe0ff, 1017px 1652px 0 1px #fff, 1213px 114px 0 1px #fff, 72px 600px 0 1px #cfe0ff, 909px 1414px 0 1px #fff, 194px 354px 0 1px #fff, 2095px 942px 0 1px #fff, 456px 1358px 0 1px #fff, 1560px 1245px 0 1px #cfe0ff, 1590px 1702px 0 1px #cfe0ff, 2243px 1075px 0 1px #fff, 960px 1776px 0 1px #fff, 192px 1201px 0 1px #fff, 109px 370px 0 1px #fff, 1894px 908px 0 1px #fff, 1660px 1467px 0 1px #cfe0ff, 2042px 782px 0 1px #cfe0ff, 2143px 7px 0 1px #fff, 742px 1643px 0 1px #fff, 1982px 1508px 0 1px #cfe0ff, 1639px 1706px 0 1px #cfe0ff, 994px 723px 0 1px #fff, 899px 138px 0 1px #fff, 1524px 1625px 0 1px #cfe0ff, 1612px 1485px 0 1px #fff, 1055px 113px 0 1px #fff, 2119px 1709px 0 1px #fff, 1716px 1335px 0 1px #cfe0ff, 2184px 1722px 0 1px #cfe0ff, 1578px 1303px 0 1px #fff, 1445px 1263px 0 1px #cfe0ff, 1959px 616px 0 1px #fff, 633px 701px 0 1px #cfe0ff, 14px 942px 0 1px #fff, 1050px 1475px 0 1px #fff, 1017px 260px 0 1px #fff, 2178px 864px 0 1px #cfe0ff, 543px 376px 0 1px #fff, 2319px 801px 0 1px #cfe0ff, 129px 561px 0 1px #fff, 2216px 531px 0 1px #fff, 998px 1649px 0 1px #fff, 1400px 1700px 0 1px #fff, 822px 1330px 0 1px #cfe0ff, 283px 1717px 0 1px #fff, 1442px 259px 0 1px #fff, 1521px 1252px 0 1px #fff, 320px 1129px 0 1px #fff, 1393px 1789px 0 1px #fff, 1956px 1427px 0 1px #cfe0ff, 1401px 1739px 0 1px #fff, 2209px 529px 0 1px #fff, 927px 1595px 0 1px #fff, 976px 1567px 0 1px #fff, 634px 762px 0 1px #fff, 546px 1706px 0 1px #fff, 1221px 1091px 0 1px #cfe0ff, 1899px 75px 0 1px #cfe0ff, 1688px 1417px 0 1px #fff, 537px 789px 0 1px #fff, 1758px 1695px 0 1px #fff, 1704px 1127px 0 1px #fff, 318px 1064px 0 1px #fff, 1070px 1228px 0 1px #fff, 133px 1693px 0 1px #fff, 1665px 1798px 0 1px #fff, 633px 545px 0 1px #fff, 2267px 1183px 0 1px #fff, 6px 721px 0 1px #fff, 1685px 1064px 0 1px #cfe0ff, 1074px 1400px 0 1px #fff, 151px 1765px 0 1px #cfe0ff, 456px 1129px 0 1px #fff, 1403px 1457px 0 1px #fff, 146px 355px 0 1px #fff, 1824px 470px 0 1px #fff, 616px 1505px 0 1px #fff, 1156px 1285px 0 1px #fff, 660px 1787px 0 1px #fff, 1688px 999px 0 1px #fff, 204px 987px 0 1px #fff, 2077px 1305px 0 1px #cfe0ff, 1859px 912px 0 1px #fff, 698px 667px 0 1px #cfe0ff, 851px 1118px 0 1px #fff, 143px 1095px 0 1px #fff, 1474px 1627px 0 1px #fff, 1915px 74px 0 1px #fff, 643px 569px 0 1px #cfe0ff, 2016px 1343px 0 1px #fff, 606px 167px 0 1px #cfe0ff, 269px 1162px 0 1px #fff, 1011px 137px 0 1px #cfe0ff, 632px 818px 0 1px #fff, 1083px 1700px 0 1px #fff, 558px 95px 0 1px #fff, 2324px 152px 0 1px #fff, 1771px 1541px 0 1px #fff, 33px 589px 0 1px #fff, 1801px 1678px 0 1px #cfe0ff, 2033px 1788px 0 1px #cfe0ff, 1446px 1613px 0 1px #cfe0ff, 1110px 1498px 0 1px #fff, 1366px 1096px 0 1px #fff, 1797px 1674px 0 1px #fff, 2293px 1226px 0 1px #fff, 1662px 1651px 0 1px #cfe0ff, 229px 452px 0 1px #fff, 1970px 1169px 0 1px #cfe0ff, 971px 934px 0 1px #cfe0ff, 501px 1623px 0 1px #cfe0ff, 2395px 455px 0 1px #cfe0ff, 1398px 565px 0 1px #cfe0ff, 864px 650px 0 1px #fff, 2272px 169px 0 1px #fff, 605px 1710px 0 1px #fff, 532px 206px 0 1px #fff, 1517px 862px 0 1px #fff, 1856px 939px 0 1px #cfe0ff, 1071px 636px 0 1px #fff, 636px 1448px 0 1px #fff, 1782px 491px 0 1px #fff, 1843px 155px 0 1px #cfe0ff, 80px 707px 0 1px #fff, 841px 703px 0 1px #cfe0ff, 1718px 562px 0 1px #fff, 1612px 1262px 0 1px #cfe0ff, 806px 191px 0 1px #fff, 1398px 1509px 0 1px #fff, 2069px 181px 0 1px #fff, 245px 1069px 0 1px #fff, 90px 305px 0 1px #fff, 447px 812px 0 1px #fff, 2303px 1281px 0 1px #fff, 1491px 227px 0 1px #fff, 1621px 584px 0 1px #cfe0ff, 2368px 1609px 0 1px #fff, 265px 1751px 0 1px #fff, 1390px 1270px 0 1px #fff, 2138px 202px 0 1px #fff, 2024px 556px 0 1px #fff, 1037px 720px 0 1px #cfe0ff, 345px 1545px 0 1px #cfe0ff, 33px 10px 0 1px #fff, 2350px 1666px 0 1px #fff, 1951px 413px 0 1px #cfe0ff, 2074px 343px 0 1px #cfe0ff, 1072px 1573px 0 1px #fff, 1224px 366px 0 1px #cfe0ff, 1707px 1784px 0 1px #fff, 1154px 539px 0 1px #cfe0ff, 588px 1070px 0 1px #fff, 1635px 1724px 0 1px #cfe0ff, 2364px 1340px 0 1px #cfe0ff, 1264px 854px 0 1px #fff, 2060px 1414px 0 1px #cfe0ff, 2021px 900px 0 1px #fff, 973px 1618px 0 1px #fff, 1594px 1405px 0 1px #fff, 1832px 349px 0 1px #cfe0ff, 296px 856px 0 1px #fff, 1680px 917px 0 1px #cfe0ff, 1604px 1088px 0 1px #fff, 1555px 1422px 0 1px #cfe0ff, 218px 864px 0 1px #fff, 2119px 566px 0 1px #fff, 966px 336px 0 1px #cfe0ff, 1246px 932px 0 1px #fff, 1351px 1592px 0 1px #fff, 2079px 100px 0 1px #fff, 432px 1274px 0 1px #fff, 1366px 897px 0 1px #cfe0ff, 546px 1073px 0 1px #fff, 771px 424px 0 1px #fff, 441px 223px 0 1px #fff, 2389px 201px 0 1px #cfe0ff, 1030px 1024px 0 1px #fff, 1509px 1306px 0 1px #fff, 563px 717px 0 1px #fff, 1206px 647px 0 1px #fff, 824px 1752px 0 1px #cfe0ff, 1099px 1601px 0 1px #cfe0ff, 722px 1438px 0 1px #cfe0ff, 482px 1499px 0 1px #cfe0ff, 2206px 271px 0 1px #cfe0ff, 1279px 1131px 0 1px #cfe0ff, 1846px 1450px 0 1px #fff, 1033px 494px 0 1px #cfe0ff, 399px 1383px 0 1px #fff, 878px 442px 0 1px #fff, 1644px 1251px 0 1px #cfe0ff, 1271px 1294px 0 1px #fff, 61px 989px 0 1px #fff, 1064px 827px 0 1px #fff, 1423px 1619px 0 1px #fff, 1145px 1005px 0 1px #fff, 1305px 381px 0 1px #fff, 2289px 1777px 0 1px #fff, 1240px 1304px 0 1px #fff, 2142px 801px 0 1px #fff, 1256px 740px 0 1px #cfe0ff, 2018px 1428px 0 1px #fff, 831px 285px 0 1px #fff, 2194px 239px 0 1px #cfe0ff, 1592px 692px 0 1px #fff, 1056px 344px 0 1px #fff, 821px 1155px 0 1px #fff, 1531px 659px 0 1px #fff, 1029px 1137px 0 1px #fff, 503px 1022px 0 1px #cfe0ff, 515px 522px 0 1px #fff, 2072px 1337px 0 1px #fff, 813px 393px 0 1px #fff, 2187px 244px 0 1px #fff, 1103px 1617px 0 1px #cfe0ff, 1541px 1345px 0 1px #fff, 1869px 129px 0 1px #cfe0ff, 2292px 1084px 0 1px #fff, 1328px 1659px 0 1px #fff, 405px 1419px 0 1px #fff, 982px 346px 0 1px #cfe0ff, 2306px 869px 0 1px #cfe0ff, 586px 777px 0 1px #fff, 1790px 54px 0 1px #fff, 1537px 519px 0 1px #fff, 1030px 508px 0 1px #fff, 1825px 560px 0 1px #cfe0ff, 1311px 1051px 0 1px #cfe0ff, 1142px 711px 0 1px #cfe0ff, 2059px 65px 0 1px #fff, 1021px 1391px 0 1px #fff, 1790px 361px 0 1px #cfe0ff, 2042px 1286px 0 1px #fff, 1475px 1272px 0 1px #cfe0ff, 1288px 1574px 0 1px #fff, 1123px 1018px 0 1px #cfe0ff, 1763px 1790px 0 1px #cfe0ff, 1025px 529px 0 1px #fff, 1279px 379px 0 1px #fff, 1389px 1590px 0 1px #cfe0ff, 788px 1627px 0 1px #fff, 1757px 155px 0 1px #fff, 483px 897px 0 1px #fff, 2393px 690px 0 1px #cfe0ff, 1332px 882px 0 1px #fff, 997px 1235px 0 1px #cfe0ff, 1314px 854px 0 1px #fff, 2265px 284px 0 1px #fff, 621px 674px 0 1px #fff, 1412px 809px 0 1px #fff, 165px 871px 0 1px #fff, 297px 48px 0 1px #fff, 784px 1630px 0 1px #fff, 1946px 1447px 0 1px #cfe0ff, 624px 1587px 0 1px #fff, 1182px 225px 0 1px #fff, 1155px 882px 0 1px #cfe0ff, 1028px 1765px 0 1px #fff, 2092px 1589px 0 1px #fff, 71px 554px 0 1px #fff, 715px 1503px 0 1px #fff, 1777px 503px 0 1px #fff, 628px 343px 0 1px #fff, 72px 598px 0 1px #fff, 93px 1478px 0 1px #cfe0ff, 1431px 1765px 0 1px #fff, 1172px 1531px 0 1px #fff, 2317px 241px 0 1px #fff, 26px 1789px 0 1px #fff, 385px 1503px 0 1px #cfe0ff, 2146px 508px 0 1px #cfe0ff, 661px 525px 0 1px #cfe0ff, 1010px 733px 0 1px #fff, 944px 264px 0 1px #fff, 5px 1767px 0 1px #fff, 625px 1208px 0 1px #fff, 136px 1106px 0 1px #fff, 198px 3px 0 1px #fff, 1089px 366px 0 1px #cfe0ff, 1824px 1035px 0 1px #fff, 2190px 1435px 0 1px #fff, 1538px 181px 0 1px #cfe0ff, 428px 665px 0 1px #cfe0ff, 1786px 143px 0 1px #cfe0ff, 1244px 1354px 0 1px #cfe0ff, 1341px 1215px 0 1px #fff, 758px 1219px 0 1px #fff, 1691px 1248px 0 1px #cfe0ff, 2193px 1771px 0 1px #fff, 1690px 690px 0 1px #fff, 854px 1018px 0 1px #cfe0ff, 471px 529px 0 1px #fff, 1744px 778px 0 1px #cfe0ff, 277px 793px 0 1px #cfe0ff, 1090px 1749px 0 1px #fff, 1059px 769px 0 1px #cfe0ff, 1956px 1787px 0 1px #fff, 1488px 594px 0 1px #fff, 738px 65px 0 1px #cfe0ff, 2059px 400px 0 1px #fff}
+.stars2 i{width:1.5px;height:1.5px;opacity:.75;box-shadow:1409px 1128px 1px 1px #ffffff, 888px 1404px 1px 1px #dce8ff, 2180px 1553px 1px 1px #ffffff, 1472px 1248px 1px 1px #dce8ff, 427px 732px 1px 1px #dce8ff, 1910px 1628px 1px 1px #ffffff, 827px 718px 1px 1px #ffffff, 577px 519px 1px 1px #dce8ff, 672px 917px 1px 1px #dce8ff, 132px 104px 1px 1px #ffffff, 496px 1531px 1px 1px #dce8ff, 2088px 1710px 1px 1px #ffffff, 1901px 1130px 1px 1px #dce8ff, 653px 1562px 1px 1px #dce8ff, 484px 1504px 1px 1px #ffffff, 98px 742px 1px 1px #dce8ff, 1873px 1641px 1px 1px #ffffff, 1614px 870px 1px 1px #dce8ff, 528px 980px 1px 1px #ffffff, 943px 984px 1px 1px #dce8ff, 1149px 902px 1px 1px #ffffff, 1127px 1665px 1px 1px #dce8ff, 615px 895px 1px 1px #dce8ff, 2208px 1719px 1px 1px #dce8ff, 434px 1440px 1px 1px #dce8ff, 2395px 59px 1px 1px #dce8ff, 1609px 1556px 1px 1px #ffffff, 1498px 516px 1px 1px #dce8ff, 947px 791px 1px 1px #ffffff, 1610px 1365px 1px 1px #ffffff, 642px 968px 1px 1px #dce8ff, 812px 1221px 1px 1px #dce8ff, 1532px 1409px 1px 1px #dce8ff, 1432px 1547px 1px 1px #ffffff, 522px 99px 1px 1px #dce8ff, 1620px 1177px 1px 1px #dce8ff, 2230px 1377px 1px 1px #dce8ff, 920px 1214px 1px 1px #dce8ff, 1670px 960px 1px 1px #ffffff, 339px 894px 1px 1px #dce8ff, 1919px 251px 1px 1px #dce8ff, 206px 479px 1px 1px #dce8ff, 787px 891px 1px 1px #ffffff, 2153px 1215px 1px 1px #dce8ff, 693px 1122px 1px 1px #dce8ff, 2040px 458px 1px 1px #ffffff, 1081px 837px 1px 1px #ffffff, 1806px 223px 1px 1px #dce8ff, 1412px 984px 1px 1px #ffffff, 1068px 1410px 1px 1px #dce8ff, 1156px 979px 1px 1px #dce8ff, 387px 99px 1px 1px #dce8ff, 682px 1459px 1px 1px #ffffff, 1491px 111px 1px 1px #dce8ff, 602px 699px 1px 1px #ffffff, 531px 914px 1px 1px #dce8ff, 2221px 879px 1px 1px #ffffff, 1766px 643px 1px 1px #dce8ff, 2145px 343px 1px 1px #ffffff, 102px 1450px 1px 1px #ffffff, 1353px 1358px 1px 1px #ffffff, 268px 645px 1px 1px #dce8ff, 1194px 375px 1px 1px #dce8ff, 1907px 649px 1px 1px #dce8ff, 60px 284px 1px 1px #ffffff, 1069px 1410px 1px 1px #dce8ff, 865px 872px 1px 1px #dce8ff, 517px 1267px 1px 1px #dce8ff, 521px 735px 1px 1px #dce8ff, 73px 713px 1px 1px #dce8ff, 2343px 1764px 1px 1px #dce8ff, 76px 1178px 1px 1px #dce8ff, 2094px 1679px 1px 1px #dce8ff, 522px 469px 1px 1px #dce8ff, 110px 1743px 1px 1px #dce8ff, 1357px 33px 1px 1px #ffffff, 746px 1425px 1px 1px #ffffff, 1272px 380px 1px 1px #dce8ff, 1182px 1287px 1px 1px #dce8ff, 788px 827px 1px 1px #ffffff, 2077px 1277px 1px 1px #ffffff, 245px 235px 1px 1px #dce8ff, 2307px 1799px 1px 1px #ffffff, 2147px 201px 1px 1px #dce8ff, 1871px 1318px 1px 1px #dce8ff, 2234px 765px 1px 1px #dce8ff, 622px 986px 1px 1px #dce8ff, 193px 129px 1px 1px #dce8ff, 2221px 594px 1px 1px #ffffff, 805px 1785px 1px 1px #ffffff, 724px 654px 1px 1px #ffffff, 1879px 1400px 1px 1px #dce8ff, 1561px 663px 1px 1px #ffffff, 163px 1762px 1px 1px #dce8ff, 23px 1201px 1px 1px #ffffff, 1839px 467px 1px 1px #ffffff, 2px 1105px 1px 1px #dce8ff, 1828px 1742px 1px 1px #dce8ff, 963px 1396px 1px 1px #dce8ff, 97px 1412px 1px 1px #dce8ff, 1395px 183px 1px 1px #ffffff, 62px 1635px 1px 1px #dce8ff, 1198px 129px 1px 1px #dce8ff, 2037px 1782px 1px 1px #dce8ff, 746px 114px 1px 1px #ffffff, 1771px 525px 1px 1px #dce8ff, 977px 1294px 1px 1px #ffffff, 34px 1582px 1px 1px #ffffff, 99px 1473px 1px 1px #dce8ff, 547px 453px 1px 1px #dce8ff, 2093px 786px 1px 1px #ffffff, 638px 1794px 1px 1px #ffffff, 829px 638px 1px 1px #ffffff, 1356px 1725px 1px 1px #dce8ff, 70px 1080px 1px 1px #dce8ff, 633px 1104px 1px 1px #ffffff, 30px 641px 1px 1px #ffffff, 50px 135px 1px 1px #ffffff, 401px 720px 1px 1px #ffffff, 250px 46px 1px 1px #ffffff;animation:tw 8s ease-in-out infinite}
+.stars3 i{width:2.5px;height:2.5px;opacity:.95;filter:blur(.3px);box-shadow:1636px 1687px 2px 2px #ffffff, 1668px 1799px 2px 2px #ffffff, 511px 714px 2px 2px #ffffff, 1609px 827px 2px 2px #ffffff, 1499px 1029px 2px 2px #ffe4c0, 1850px 1616px 2px 2px #ffffff, 501px 1536px 2px 2px #ffffff, 1693px 570px 2px 2px #ffe4c0, 1360px 1446px 2px 2px #ffffff, 2317px 895px 2px 2px #ffffff, 1606px 1765px 2px 2px #ffe4c0, 162px 896px 2px 2px #ffffff, 1573px 191px 2px 2px #ffffff, 1325px 1214px 2px 2px #cfe0ff, 194px 5px 2px 2px #ffffff, 937px 1140px 2px 2px #ffe4c0, 1904px 1189px 2px 2px #ffffff, 413px 244px 2px 2px #ffe4c0, 180px 879px 2px 2px #ffffff, 1784px 973px 2px 2px #ffffff, 914px 647px 2px 2px #ffffff, 112px 1409px 2px 2px #ffe4c0, 2049px 578px 2px 2px #cfe0ff, 1297px 1217px 2px 2px #ffffff, 1593px 731px 2px 2px #cfe0ff, 1986px 1096px 2px 2px #ffffff, 1806px 1539px 2px 2px #cfe0ff, 1716px 1080px 2px 2px #ffffff, 1047px 259px 2px 2px #ffffff, 1021px 1644px 2px 2px #ffffff, 180px 1080px 2px 2px #ffffff, 1906px 1328px 2px 2px #cfe0ff, 2015px 652px 2px 2px #cfe0ff, 1852px 1673px 2px 2px #ffffff, 417px 23px 2px 2px #ffffff, 1859px 1446px 2px 2px #cfe0ff, 655px 409px 2px 2px #ffffff, 1538px 667px 2px 2px #ffffff, 2305px 1765px 2px 2px #ffffff, 116px 689px 2px 2px #ffe4c0;animation:tw 12s ease-in-out infinite reverse}
+@keyframes tw{0%,100%{opacity:.9}50%{opacity:.4}}
+
+/* comets — one streak, long quiet gaps */
+.comet{position:fixed;z-index:-1;top:18%;left:-8%;width:130px;height:1.5px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(207,224,248,.9));border-radius:2px;
+  filter:drop-shadow(0 0 6px rgba(207,224,248,.8));opacity:0;
+  animation:streak 17s linear infinite;animation-delay:4s}
+.comet.two{top:64%;left:-10%;width:90px;animation-delay:11.5s;animation-duration:19s}
+@keyframes streak{0%,92%{opacity:0;transform:translate(0,0) rotate(8deg)}
+  93%{opacity:1}97%{opacity:0}100%{opacity:0;transform:translate(120vw,14vh) rotate(8deg)}}
+
+/* ── THE GALAXY — painted in layered light ──────────────────────────── */
+.andromeda{position:absolute;z-index:-1;pointer-events:none;
+  top:4%;right:-14%;width:min(88vmin,900px);height:min(88vmin,900px);
+  animation:drift 90s ease-in-out infinite alternate}
+@keyframes drift{from{transform:rotate(-19deg) scale(1)}to{transform:rotate(-16deg) scale(1.035)}}
+.andromeda span{position:absolute;inset:0;border-radius:50%}
+/* outer silver-blue halo */
+.a1{background:radial-gradient(ellipse 50% 20% at 50% 50%, rgba(169,196,232,.20), rgba(120,150,200,.07) 55%, transparent 75%);filter:blur(10px)}
+/* broad warm disk */
+.a2{background:radial-gradient(ellipse 42% 13% at 50% 50%, rgba(242,194,136,.34), rgba(215,165,120,.10) 60%, transparent 78%);filter:blur(8px)}
+/* dust lanes — two dark arcs */
+.a3{background:
+  radial-gradient(ellipse 38% 5.5% at 50% 42.5%, rgba(6,4,8,.62), transparent 72%),
+  radial-gradient(ellipse 30% 4% at 51% 57%, rgba(6,4,8,.45), transparent 70%);filter:blur(5px)}
+/* inner glow ring */
+.a4{background:radial-gradient(ellipse 24% 8% at 50% 50%, rgba(255,233,207,.5), rgba(255,214,160,.14) 60%, transparent 80%);filter:blur(6px)}
+/* the core */
+.a5{background:radial-gradient(circle 5% at 50% 50%, rgba(255,255,255,.95), rgba(255,236,210,.55) 35%, rgba(255,220,170,.12) 60%, transparent 75%);filter:blur(2px)}
+/* companion galaxy — M110, the little smudge Lion has */
+.m110{position:absolute;top:67%;left:24%;width:11%;height:5%;border-radius:50%;
+  background:radial-gradient(ellipse, rgba(200,215,240,.35), transparent 70%);filter:blur(4px);transform:rotate(20deg)}
+
+/* ── structure ──────────────────────────────────────────────────────── */
+.wrap{max-width:1020px;margin:0 auto;padding:0 30px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;
+  background:rgba(3,8,18,.42);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(159,196,255,.08)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-size:.95rem;font-weight:400;letter-spacing:.02em;color:var(--ink)}
+.brand em{font-style:normal;color:var(--warm)}
+nav .links a{color:var(--dim);text-decoration:none;font-size:.85rem;margin-left:28px;transition:color .25s}
+nav .links a:hover{color:var(--warm-soft)}
+@media(max-width:640px){nav .links a{margin-left:14px;font-size:.76rem}}
+
+/* hero — the observatory window */
+header{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;z-index:1;max-width:640px}
+.hello{color:var(--warm);font-size:.85rem;letter-spacing:.35em;text-transform:uppercase;margin-bottom:22px}
+h1{font-size:clamp(3rem,8.5vw,5.4rem);font-weight:200;line-height:1.04;letter-spacing:-.01em;
+  background:linear-gradient(115deg,#ffffff 30%,var(--ice-soft) 55%,var(--warm-soft) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 30px rgba(159,196,255,.25))}
+.lede{margin-top:28px;font-size:clamp(1.02rem,2.2vw,1.22rem);font-weight:300;color:var(--dim);max-width:520px}
+.lede b{color:var(--ink);font-weight:400}
+.cta{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 32px;border-radius:999px;text-decoration:none;
+  font-size:.93rem;letter-spacing:.04em;transition:all .3s}
+.btn.solid{color:#0a1220;background:linear-gradient(120deg,var(--warm-soft),var(--warm));
+  box-shadow:0 0 28px rgba(242,194,136,.35), inset 0 1px 0 rgba(255,255,255,.6);font-weight:500}
+.btn.solid:hover{box-shadow:0 0 44px rgba(242,194,136,.55);transform:translateY(-1px)}
+.btn.line{color:var(--ice-soft);border:1px solid rgba(159,196,255,.35);background:rgba(159,196,255,.05)}
+.btn.line:hover{border-color:var(--ice);background:rgba(159,196,255,.12)}
+.scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);color:var(--faint);
+  font-size:1.2rem;animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* section chrome */
+section{position:relative;padding:110px 0}
+.eyebrow{color:var(--warm);font-size:.78rem;letter-spacing:.35em;text-transform:uppercase;margin-bottom:14px}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:250;color:#fff;margin-bottom:14px;letter-spacing:-.01em}
+.sub{color:var(--faint);font-weight:300;max-width:560px;margin-bottom:60px}
+
+/* ── the manifest — numbered, asymmetric, editorial ─────────────────── */
+.manifest{border-top:1px solid var(--line)}
+.mrow{position:relative;display:grid;grid-template-columns:110px 1fr;gap:26px;
+  padding:44px 10px 44px 0;border-bottom:1px solid var(--line);transition:background .35s}
+.mrow:hover{background:linear-gradient(90deg,rgba(242,194,136,.045),transparent 65%)}
+.mrow:nth-child(even){padding-left:6vw}
+@media(max-width:700px){.mrow{grid-template-columns:64px 1fr}.mrow:nth-child(even){padding-left:0}}
+.mnum{font-size:clamp(2.6rem,6vw,4rem);font-weight:100;color:transparent;
+  -webkit-text-stroke:1px rgba(159,196,255,.30);line-height:1;padding-top:4px;transition:all .35s}
+.mrow:hover .mnum{-webkit-text-stroke:1px rgba(242,194,136,.75);text-shadow:0 0 24px rgba(242,194,136,.25)}
+.mrow h3{font-size:1.28rem;font-weight:400;color:var(--ice-soft);margin-bottom:8px;letter-spacing:.01em}
+.mrow p{color:var(--dim);font-weight:300;font-size:.96rem;max-width:600px}
+.mrow .also{margin-top:10px;font-size:.82rem;color:var(--faint);letter-spacing:.03em}
+.mrow .also i{font-style:normal;color:var(--warm);opacity:.85}
+
+/* ── mission control — the herdkit console ──────────────────────────── */
+.mission{display:grid;grid-template-columns:1fr 1.1fr;gap:54px;align-items:center}
+@media(max-width:840px){.mission{grid-template-columns:1fr}}
+.console{border-radius:14px;overflow:hidden;border:1px solid rgba(159,196,255,.18);
+  background:rgba(4,8,16,.82);backdrop-filter:blur(12px);
+  box-shadow:0 24px 80px rgba(0,0,0,.55), 0 0 60px rgba(159,196,255,.06)}
+.cbar{display:flex;align-items:center;gap:8px;padding:11px 14px;
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.02));
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.dot{width:11px;height:11px;border-radius:50%}
+.dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
+.cbar span{margin-left:8px;color:var(--faint);font-size:.75rem;letter-spacing:.05em}
+.cbody{padding:20px 22px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:.8rem;line-height:2.05}
+.cbody .ln{white-space:nowrap;overflow:hidden}
+.cbody .t{color:#4a5a75;margin-right:10px}
+.ok{color:#63d68a}.run{color:var(--warm)}.info{color:var(--ice)}
+.cur{display:inline-block;width:8px;height:15px;background:var(--ice-soft);vertical-align:middle;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.mtext h3{font-size:1.6rem;font-weight:300;color:#fff;margin-bottom:16px}
+.mtext p{color:var(--dim);font-weight:300;margin-bottom:14px}
+.mtext .ten{font-size:1.05rem;color:var(--warm-soft)}
+.mtext .ten b{font-weight:500;color:var(--warm)}
+.repo{display:inline-block;margin-top:10px;font-family:"SF Mono",Menlo,monospace;font-size:.82rem;
+  color:var(--ice);text-decoration:none;border:1px solid rgba(159,196,255,.3);
+  border-radius:8px;padding:8px 14px;transition:all .3s}
+.repo:hover{background:rgba(159,196,255,.1);border-color:var(--ice)}
+
+/* ── founder / values ───────────────────────────────────────────────── */
+.orbit{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
+@media(max-width:840px){.orbit{grid-template-columns:1fr}}
+.orbit .who h3{font-size:1.45rem;font-weight:300;color:#fff}
+.orbit .who .role{color:var(--warm);font-size:.82rem;letter-spacing:.25em;text-transform:uppercase;margin:6px 0 24px}
+.orbit .who p{color:var(--dim);font-weight:300;margin-bottom:14px;font-size:.97rem}
+.orbit .who a{color:var(--ice);text-decoration:none;border-bottom:1px solid rgba(159,196,255,.35)}
+.vlist{display:flex;flex-direction:column;gap:2px}
+.v{padding:22px 24px;border-left:1px solid var(--line);transition:border-color .3s, background .3s}
+.v:hover{border-left-color:var(--warm);background:linear-gradient(90deg,rgba(242,194,136,.05),transparent 70%)}
+.v h4{font-weight:400;color:var(--warm-soft);font-size:.98rem;margin-bottom:5px;letter-spacing:.02em}
+.v p{color:var(--dim);font-weight:300;font-size:.88rem}
+
+/* ── transmission / contact ─────────────────────────────────────────── */
+.dish{text-align:center;padding:70px 30px;border:1px solid var(--line);border-radius:22px;
+  background:radial-gradient(ellipse 70% 100% at 50% 0%, rgba(242,194,136,.06), transparent 60%), rgba(255,255,255,.02);
+  backdrop-filter:blur(8px)}
+.dish .mail{display:inline-block;margin:18px 0 8px;font-size:clamp(1.15rem,3vw,1.7rem);font-weight:300;
+  color:var(--warm-soft);text-decoration:none;letter-spacing:.01em;
+  text-shadow:0 0 24px rgba(242,194,136,.3);transition:text-shadow .3s}
+.dish .mail:hover{text-shadow:0 0 44px rgba(242,194,136,.6)}
+.dish .fine{color:var(--faint);font-size:.8rem;font-weight:300;margin-top:14px}
+
+footer{padding:64px 0 44px;text-align:center}
+footer a{color:var(--dim);text-decoration:none;margin:0 14px;font-size:.88rem}
+footer a:hover{color:var(--warm-soft)}
+.sig{margin-top:16px;color:var(--faint);font-size:.78rem;font-weight:300}
+.sig em{font-style:normal;color:var(--warm);opacity:.8}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="wordmark">Keegan Labs</div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<div class="field"></div>
+<div class="stars"><i></i></div><div class="stars2"><i></i></div><div class="stars3"><i></i></div>
+<div class="comet"></div><div class="comet two"></div>
 
-  <main>
-    <div class="section">
-      <div class="section-number">1. What we do</div>
-      <h1>Data pipelines, AI automation, and compliance operations for small and mid-size organizations.</h1>
-      <p>Keegan Labs delivers fixed-price engagements — data infrastructure, AI workflow automation, and compliance-readiness sprints — to small and mid-size businesses that need senior-level execution without the enterprise overhead.</p>
-      <p>Every engagement is scoped to a concrete outcome. No open-ended retainers, no scope creep.</p>
+<nav><div class="wrap">
+  <div class="brand">keegan<em>labs</em></div>
+  <div class="links">
+    <a href="#work">Work</a><a href="#herdkit">Herdkit</a><a href="#founder">Founder</a><a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header>
+  <div class="andromeda"><span class="a1"></span><span class="a2"></span><span class="a3"></span><span class="a4"></span><span class="a5"></span><span class="m110"></span></div>
+  <div class="wrap"><div class="hero">
+    <div class="hello">Keegan Labs</div>
+    <h1>One engineer.<br>A fleet of agents.<br>Real deliverables.</h1>
+    <p class="lede">We build <b>data pipelines</b>, <b>AI workflow automation</b>, and the odd-shaped technical things nobody else wants to scope — delivered by agent-accelerated engineering at prices a small business can actually say yes to.</p>
+    <div class="cta">
+      <a class="btn solid" href="#contact">Open a channel</a>
+      <a class="btn line" href="https://github.com/briankeegan1/herdkit">See the open source ↗</a>
     </div>
+  </div></div>
+  <div class="scrollcue">▾</div>
+</header>
 
-    <div class="section">
-      <div class="section-number">2. What we offer</div>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Compliance Sprints</h3>
-          <p>Fixed-price readiness packages for incoming regulatory obligations. Delivered in days, not weeks.</p>
-        </div>
-        <div class="service-card">
-          <h3>Data Products</h3>
-          <p>Monitoring feeds and lead-data pipelines built on public sources. Delivered clean, schema-validated, and ready to use.</p>
-        </div>
-        <div class="service-card">
-          <h3>AI &amp; Automation</h3>
-          <p>Workflow automation, AI integrations, and agent-orchestration builds that reduce manual effort on recurring operations.</p>
-        </div>
-        <div class="service-card">
-          <h3>Federal Market Intelligence</h3>
-          <p>Contract market intelligence and capture support for small federal contractors.</p>
-        </div>
+<section id="work"><div class="wrap">
+  <div class="eyebrow">Flight Manifest</div>
+  <h2>What we build</h2>
+  <p class="sub">Designed by a human, assembled by a supervised fleet, verified before it ever reaches you.</p>
+  <div class="manifest">
+    <div class="mrow"><div class="mnum">01</div><div>
+      <h3>Data pipelines</h3>
+      <p>Messy sources in, clean verified datasets out — extraction, normalization, validation, scheduled refresh. Built to run unattended and to fail loudly instead of lying quietly.</p>
+      <div class="also"><i>✦</i> every output row traceable to its source</div>
+    </div></div>
+    <div class="mrow"><div class="mnum">02</div><div>
+      <h3>AI workflow automation</h3>
+      <p>The repetitive knowledge work — research, monitoring, reporting, document generation — turned into agent workflows with a human holding the judgment and the send button.</p>
+      <div class="also"><i>✦</i> supervised autonomy, never autopilot</div>
+    </div></div>
+    <div class="mrow"><div class="mnum">03</div><div>
+      <h3>Websites &amp; product builds</h3>
+      <p>Fast, clean sites and internal tools without the agency invoice. Static-first, zero bloat, shipped through the same review gates as everything else we make.</p>
+      <div class="also"><i>✦</i> this site is one — view source, it's just craft</div>
+    </div></div>
+    <div class="mrow"><div class="mnum">04</div><div>
+      <h3>Technical solutions</h3>
+      <p>One-off integrations, compliance-workflow readiness, data verification, tooling that makes a three-person team operate like thirty. Bring us the weird one.</p>
+      <div class="also"><i>✦</i> fixed prices, honest "no" when it's not our lane</div>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="herdkit"><div class="wrap">
+  <div class="eyebrow">Mission Control</div>
+  <h2>Herdkit — the engine, in the open</h2>
+  <p class="sub">Our multi-agent orchestration engine is open source. This is roughly what it looks like when your project is being built:</p>
+  <div class="mission">
+    <div class="mtext">
+      <h3>A coordinator. A fleet. A gate.</h3>
+      <p>Herdkit runs fleets of AI agents in parallel — each building in an isolated workspace, every change health-checked and adversarially reviewed by <em>other</em> agents, then merged by an autonomous gate. Nothing ships on vibes.</p>
+      <p class="ten">We're working to change how companies use AI: <b>10× the output at a fraction of the cost</b> — with quality gates a senior engineer would sign off on.</p>
+      <a class="repo" href="https://github.com/briankeegan1/herdkit">github.com/briankeegan1/herdkit ↗</a>
+    </div>
+    <div class="console">
+      <div class="cbar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span>herd — watch · your-project</span></div>
+      <div class="cbody">
+        <div class="ln"><span class="t">09:41:07</span><span class="run">⠿ builder</span> data-pipeline · working <span class="info">· worktree isolated</span></div>
+        <div class="ln"><span class="t">09:41:07</span><span class="run">⠿ builder</span> report-generator · working</div>
+        <div class="ln"><span class="t">09:43:52</span><span class="info">⚖ review</span> pr#12 · adversarial pass · 2 reviewers</div>
+        <div class="ln"><span class="t">09:44:18</span><span class="ok">✓ health</span> suite clean · 59/59 tests</div>
+        <div class="ln"><span class="t">09:44:41</span><span class="ok">✓ merged</span> pr#12 · gate passed · autonomously</div>
+        <div class="ln"><span class="t">09:44:42</span><span class="info">✎ scribe</span> backlog reconciled · item shipped</div>
+        <div class="ln"><span class="t">09:45:03</span><span class="run">⠿ builder</span> next item picked up · no human needed</div>
+        <div class="ln"><span class="t">&nbsp;</span><span class="cur"></span></div>
       </div>
     </div>
+  </div>
+</div></section>
 
-    <div class="section">
-      <div class="section-number">3. How it works</div>
-      <h2>Scoped. Delivered. Done.</h2>
-      <p>Every engagement starts with a written scope document — what we will deliver, what the acceptance criteria are, and what the price is. Payment gates delivery. There are no surprise add-ons.</p>
-      <p>Delivery is AI-accelerated: a senior engineer directs an agent fleet that handles the repeatable work, cutting turnaround time while keeping quality under human review.</p>
+<section id="founder"><div class="wrap">
+  <div class="eyebrow">The Human</div>
+  <h2>Founder</h2>
+  <div class="orbit">
+    <div class="who">
+      <h3>Brian Keegan</h3>
+      <div class="role">Founder · Engineer</div>
+      <p>Brian is a software engineer who runs multi-agent AI systems as daily production machinery — not demos. Keegan Labs is where that practice becomes client work: pipelines, automation, and tools delivered fast and priced honestly.</p>
+      <p>He maintains <a href="https://github.com/briankeegan1/herdkit">herdkit</a> in the open, because the practices that make AI-assisted engineering trustworthy — isolation, review gates, verification, honest logs — should belong to everyone, not live in a black box.</p>
     </div>
-
-    <div class="section">
-      <div class="section-number">4. Get in touch</div>
-      <p>If you have a concrete problem that fits one of these areas, reach out. We respond to every inquiry and will tell you directly if your problem is not a fit.</p>
-      <p><a href="contact.html">Contact Keegan Labs &rarr;</a></p>
+    <div class="vlist">
+      <div class="v"><h4>Open source first</h4><p>The core of how we work is public. Improvements flow back to the community.</p></div>
+      <div class="v"><h4>Affordable by design</h4><p>Agent-accelerated delivery means small-business prices for work that used to take an agency retainer.</p></div>
+      <div class="v"><h4>We teach as we build</h4><p>Engagements can include mentoring — your team learns the coding, AI, and automation practices behind the work, so the capability stays when we're done.</p></div>
+      <div class="v"><h4>Verified, always</h4><p>Outputs are tested, reviewed, and traceable to their sources. Nothing ships on vibes.</p></div>
     </div>
-  </main>
+  </div>
+</div></section>
 
-  <footer>
-    <p>Keegan Labs LLC &nbsp;&middot;&nbsp; <a href="mailto:brian.keegan@keeganlabs.net">brian.keegan@keeganlabs.net</a></p>
-  </footer>
-</div>
+<section id="contact"><div class="wrap">
+  <div class="dish">
+    <div class="eyebrow">Transmission</div>
+    <h2>Open a channel</h2>
+    <p class="sub" style="margin:0 auto 6px;max-width:520px">Tell us what's slow, manual, or messy. We'll tell you honestly whether we can fix it — and exactly what it costs.</p>
+    <a class="mail" href="mailto:brian.keegan@keeganlabs.net">brian.keegan@keeganlabs.net</a>
+    <div class="fine">Keegan Labs LLC · United States</div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div><a href="https://github.com/briankeegan1/herdkit">GitHub</a><a href="mailto:brian.keegan@keeganlabs.net">Email</a></div>
+  <p class="sig">© 2026 Keegan Labs LLC · built with <em>herdkit</em> — by one human and a fleet of very diligent agents.</p>
+</div></footer>
 </body>
 </html>
